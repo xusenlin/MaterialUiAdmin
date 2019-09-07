@@ -1,7 +1,9 @@
-@import "./font/font.css";
-@import "./font/icon.css";
-@import "variables";
-
+@import "../font/font.css";
+@import "../font/icon.css";
+@import "./variables.scss";
+a{
+    text-decoration: none;
+}
 ::-webkit-scrollbar {
     width: 4px;
     height: 8px;
