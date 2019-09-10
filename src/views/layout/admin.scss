@@ -18,22 +18,45 @@
             background-color: rgba(0, 0, 0, 0.77);
             width: 100%;
             height: 100%;
-            .itemLink{
-                width: auto;
-                transition: all 300ms linear;
-                margin: 10px 15px 0;
-                border-radius: 3px;
-                position: relative;
+            .logo{
                 display: flex;
-                padding: 10px 15px;
+                overflow: hidden;
 
+                align-items: center;
+                padding: 0 15px;
+                height: 64px;
+                font-size: 18px;
                 color: #fff;
-            }
-            .active{
-                .itemLink{
-                    background-color: #9c27b0;
+                img{
+                    margin-right: 10px;
+                    width: 35px;
+                    height: 35px;
                 }
             }
+            .dividingLine{
+                display: block;
+                overflow: hidden;
+                width: 86%;
+                height: 1px;
+                margin: 0 auto;
+                background-color: #717171;
+            }
+            .navLink{
+                .itemLink{
+                    width: auto;
+                    transition: all .6s linear;
+                    margin: 10px 15px 0;
+                    border-radius: 3px;
+                    position: relative;
+                    display: flex;
+                    padding: 10px 15px;
+                    color: #fff;
+                    background-color: transparent;
+                }
+
+            }
+
+
         }
     }
     .container{
