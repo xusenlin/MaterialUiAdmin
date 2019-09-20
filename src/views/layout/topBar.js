@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppBar,Toolbar,IconButton, Typography} from '@material-ui/core'
+import { AppBar,Toolbar,IconButton} from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import Notifications from '@material-ui/icons/Notifications';
@@ -32,35 +32,6 @@ const TopBar = props => {
                             <AccountCircle />
                         </IconButton>
                     </div>
-                    {/*<div>*/}
-                    {/*    <IconButton*/}
-                    {/*        aria-label="account of current user"*/}
-                    {/*        aria-controls="menu-appbar"*/}
-                    {/*        aria-haspopup="true"*/}
-                    {/*        color="inherit"*/}
-                    {/*    >*/}
-                    {/*        <AccountCircle />*/}
-                    {/*    </IconButton>*/}
-                    {/*    <Menu*/}
-                    {/*        id="menu-appbar"*/}
-                    {/*        anchorEl={anchorEl}*/}
-                    {/*        anchorOrigin={{*/}
-                    {/*            vertical: 'top',*/}
-                    {/*            horizontal: 'right',*/}
-                    {/*        }}*/}
-                    {/*        keepMounted*/}
-                    {/*        transformOrigin={{*/}
-                    {/*            vertical: 'top',*/}
-                    {/*            horizontal: 'right',*/}
-                    {/*        }}*/}
-                    {/*        open={open}*/}
-                    {/*        onClose={handleClose}*/}
-                    {/*    >*/}
-                    {/*        <MenuItem onClick={handleClose}>Profile</MenuItem>*/}
-                    {/*        <MenuItem onClick={handleClose}>My account</MenuItem>*/}
-                    {/*    </Menu>*/}
-                    {/*</div>*/}
-
                 </Toolbar>
             </AppBar>
         </div>
