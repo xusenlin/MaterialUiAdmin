@@ -4,7 +4,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Layout from './views/layout/index.js'
 import Login from './views/login/index.js'
 import NotFound from './views/error/404.js'
-import {getToken} from "./utils/dataStorage";
+import {getToken} from "./utils/dataStorage.js";
 
 function App() {
     return (

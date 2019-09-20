@@ -6,18 +6,22 @@ import MenuRoute from '../../router/menuRoute.js'
 import Config from '../../config/index.js'
 import './admin.scss'
 
+const toggleSideBar = ()=>{
+    document.getElementById('admin').classList.toggle('closeSideBar')
+};
 
 const Layout = props => {
 
     return (
-        <div className="admin">
+        <div id="admin" className="admin">
             <SideBar
                 siteName={Config.siteName}
                 menuRoute={MenuRoute}
                 color={'#9c27b0'}
             />
             <div className="container">
-                <TopBar/>
+                <div className="maskLayer" onClick={toggleSideBar}/>
+                <TopBar toggleSideBarFunc={toggleSideBar} />
                 <Switch>
                     {
                         MenuRoute.map(route => {

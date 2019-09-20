@@ -1,12 +1,15 @@
 @import "../../assets/style/variables.scss";
-.admin{
+
+.admin {
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    .sideBar{
+
+    .sideBar {
         width: $sideBarWidth;
         position: fixed;
         left: 0;
+        transition: left .45s $animationFunc;
         height: 100vh;
         overflow-x: hidden;
         overflow-y: auto;
@@ -14,26 +17,31 @@
         background-size: 100% 100%;
         background-repeat: no-repeat;
         background-position: bottom;
-        .sideBarContent{
+        z-index: 100;
+        box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+
+        .sideBarContent {
             background-color: rgba(0, 0, 0, 0.77);
             width: 100%;
             height: 100%;
-            .logo{
+
+            .logo {
                 display: flex;
                 overflow: hidden;
-
                 align-items: center;
                 padding: 0 15px;
                 height: 64px;
                 font-size: 18px;
                 color: #fff;
-                img{
+
+                img {
                     margin-right: 10px;
                     width: 35px;
                     height: 35px;
                 }
             }
-            .dividingLine{
+
+            .dividingLine {
                 display: block;
                 overflow: hidden;
                 width: 86%;
@@ -41,10 +49,11 @@
                 margin: 0 auto;
                 background-color: #717171;
             }
-            .navLink{
-                .itemLink{
+
+            .navLink {
+                .itemLink {
                     width: auto;
-                    transition: all .6s linear;
+                    transition: background-color .45s $animationFunc;
                     margin: 10px 15px 0;
                     border-radius: 3px;
                     position: relative;
@@ -59,11 +68,63 @@
 
         }
     }
-    .container{
-        float: right;
-        width: calc(100% - #{$sideBarWidth});
+
+    .container {
+        margin-left: $sideBarWidth;
+        transition: margin-left .45s $animationFunc;
         min-height: 100vh;
         overflow-x: hidden;
         overflow-y: auto;
+        position: relative;
+
+        .maskLayer {
+            position: absolute;
+            width: 100vw;
+            display: none;
+            height: 100vh;
+            background: #000;
+            opacity: .5;
+            z-index: 99;
+        }
+    }
+}
+
+//closeSideBarClassS
+.closeSideBar {
+    .sideBar {
+        left: -$sideBarWidth;
+        box-shadow:none;
+    }
+
+    .container {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 960px) {
+    .admin {
+        .container {
+            margin-left: 0;
+            .maskLayer {
+                display: block;
+                animation: displayAnimation .45s;
+            }
+        }
+    }
+    .closeSideBar {
+        .container {
+            .maskLayer {
+                display: none;
+            }
+        }
+    }
+}
+
+@keyframes displayAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: .5;
     }
 }
